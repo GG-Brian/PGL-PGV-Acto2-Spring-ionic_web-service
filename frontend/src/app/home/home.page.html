@@ -1,0 +1,78 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="comic-crud-title">
+      - Super guachi web CRUD de comics inventados -
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <div>
+      <ion-title size="large">Datos para actualizar un comic o agregarlo;</ion-title>
+      <p><br></p>
+      <table class="table-margin">
+        <thead>
+          <tr>
+            <th class="cell-header">Nombre</th>
+            <th class="cell-header">Género</th>
+            <th class="cell-header">Paneles</th>
+            <th class="cell-header">Actualizado</th>
+            <th class="cell-header">descriptción</th>
+            <th class="cell-header">Página web</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><ion-item><ion-input type="text" [(ngModel)]="name" placeholder="Nombre"></ion-input></ion-item></td>
+            <td><ion-item><ion-input type="text" [(ngModel)]="genre" placeholder="Género(s)"></ion-input></ion-item></td>
+            <td><ion-item><ion-input type="number" [(ngModel)]="panels" placeholder="Num. Paneles"></ion-input></ion-item></td>
+            <td><ion-item><ion-input type="text" [(ngModel)]="updated" placeholder="fecha (yyyy-mm-dd HH:MM:SS)"></ion-input></ion-item></td>
+            <td><ion-item><ion-input type="text" [(ngModel)]="description" placeholder="Descripción"></ion-input></ion-item></td>
+            <td><ion-item><ion-input type="text" [(ngModel)]="webpage" placeholder="URL página web"></ion-input></ion-item></td>
+          </tr>
+        </tbody>
+      </table> 
+    </div>
+    <div>
+      <p><br></p>
+      <ion-button color="secondary" (click)="addAnotherComic(name, genre, panels, updated, description, webpage)">Añadir comic</ion-button>
+    </div>
+
+    
+    <p><br><br><br></p>
+    <table class="table-margin">
+      <thead>
+        <tr>
+          <th class="cell-header"></th>
+          <th class="cell-header">Nombre</th>
+          <th class="cell-header">Género</th>
+          <th class="cell-header">Paneles</th>
+          <th class="cell-header">Actualizado</th>
+          <th class="cell-header">descriptción</th>
+          <th class="cell-header">Página web</th>
+          <th class="cell-header"></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let comic of comics">
+        <tr>
+          <td class="cell-row"><ion-button color="primary" (click)="updateComic(comic.id, name, genre, panels, updated, description, webpage)()">Actualizar</ion-button></td>
+          <td class="cell-row">{{comic.name}}</td>
+          <td class="cell-row">{{comic.genre}}</td>
+          <td class="cell-row">{{comic.panels}}</td>
+          <td class="cell-row">{{comic.updated}}</td>
+          <td class="cell-row">{{comic.description}}</td>
+          <td class="cell-row">{{comic.webpage}}</td>
+          <td class="cell-row"><ion-button color="danger" (click)="deleteComic(comic.id)()">Eliminar</ion-button></td>
+        </tr>
+      </tbody>
+    </table>
+
+	</div>
+</ion-content>

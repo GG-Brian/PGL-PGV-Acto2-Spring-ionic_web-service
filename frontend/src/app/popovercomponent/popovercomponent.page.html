@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>popovercomponent</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row><ion-col>
+      <div>
+        <table class="table-margin">
+          <thead>
+            <tr>
+              <th class="cell-header">Nombre</th>
+              <th class="cell-header">Género</th>
+              <th class="cell-header">Paneles</th>
+              <th class="cell-header">Actualizado</th>
+              <th class="cell-header">descriptción</th>
+              <th class="cell-header">Página web</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><ion-item><ion-input type="text" [(ngModel)]="name" placeholder="Nombre"></ion-input></ion-item></td>
+              <td><ion-item><ion-input type="text" [(ngModel)]="genre" placeholder="Género(s)"></ion-input></ion-item></td>
+              <td><ion-item><ion-input type="number" [(ngModel)]="panels" placeholder="Num. Paneles"></ion-input></ion-item></td>
+              <td><ion-item><ion-input type="text" [(ngModel)]="updated" placeholder="fecha (yyyy-mm-dd HH:MM:SS)"></ion-input></ion-item></td>
+              <td><ion-item><ion-input type="text" [(ngModel)]="description" placeholder="Descripción"></ion-input></ion-item></td>
+              <td><ion-item><ion-input type="text" [(ngModel)]="webpage" placeholder="URL página web"></ion-input></ion-item></td>
+            </tr>
+          </tbody>
+        </table> 
+      </div>
+      <div>
+        <p><br></p>
+        <ion-button color="secondary" (click)="addAnotherComic(name, genre, panels, updated, description, webpage)">Añadir comic</ion-button>
+      </div>
+    </ion-col></ion-row>
+    <ion-row><ion-col><ion-button color="success" expand="block" (click)="ClosePopover()">Ok</ion-button></ion-col></ion-row>
+  </ion-grid> 
+</ion-content>

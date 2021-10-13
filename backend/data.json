@@ -1,0 +1,22 @@
+{
+    "comics": [
+      {
+        "id": 1,
+        "name": "karol",
+        "genre": "comedia",
+        "panels": 34,
+        "updated": "2001-12-26-21-05-59",
+        "description": "la que se llevó a los niños",
+        "webpage": "karel.com"
+      },
+      {
+        "id": 2,
+        "name": "karol",
+        "genre": "comedia",
+        "panels": 34,
+        "updated": "2001-12-26-21-05-59",
+        "description": "la que se llevó a los niños",
+        "webpage": "karel.com"
+      }
+    ]
+}
